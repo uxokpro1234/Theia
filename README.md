@@ -1,5 +1,6 @@
 <h1>Theia</h1>
     <p><strong>Legendary Java program for analyzing and discovering Java backdoors. Mainly for minecraft forge 1.12.2.</strong></p>
+    <p>While i was browsing trough my starred repositories, i came across Theia, which has been discontinued for a long time, and i decided to port it to java and update.</p>
 <img src = "theia.png" width="50%">
 <h2>Overview</h2>
     <p>Theia is designed to inspect Java files (JARs, projects) and detect potential backdoors, unsafe code, or suspicious patterns. It can be run in two ways:</p>
