@@ -34,7 +34,7 @@
 <h2>Credits & Shoutouts</h2>
     <p>Created by <strong>Tigermouthbear</strong> with contributions from <strong>GiantNuker, Crystalinqq, Dominika, and uxokpro1234</strong>.</p>
     <p>Shoutout to the official repository: <a href="https://github.com/Tigermouthbear/Theia">https://github.com/Tigermouthbear/Theia</a></p>
-    <p>Current version: <strong>v0.2</strong></p>
+    <p>Current version: <strong>v0.3</strong></p>
 
 <h2>Notes</h2>
     <ul>
