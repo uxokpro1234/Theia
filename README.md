@@ -11,12 +11,6 @@
 <h2>Usage</h2>
 <p>Command-line syntax:</p>
 <pre>java -jar theia.jar [file] [exclusions]</pre>
-<p>Examples:</p>
- <ul>
-        <li><code>java -jar theia.jar</code> — opens the GUI.</li>
-        <li><code>java -jar theia.jar myfile.jar</code> — runs Theia on <em>myfile.jar</em> with default exclusions.</li>
-        <li><code>java -jar theia.jar myfile.jar "com/example/,org/test/"</code> — runs Theia with custom exclusions.</li>
-    </ul>
 
 <h2>Features</h2>
     <ul>
