@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "5.2.0"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+
+group 'me.uxokpro1234'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/groups/public/" }
+}
+
+dependencies {
+    implementation "org.ow2.asm:asm:7.3.1"
+    implementation "org.ow2.asm:asm-tree:7.3.1"
+    implementation "org.ow2.asm:asm-commons:7.3.1"
+    implementation "org.ow2.asm:asm-util:7.3.1"
+
+    implementation 'li.flor:native-j-file-chooser:1.6.4'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+}
