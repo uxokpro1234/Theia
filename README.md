@@ -1,24 +1,24 @@
-    <h1>Theia</h1>
+<h1>Theia</h1>
     <p><strong>Legendary Java program for analyzing and discovering Java backdoors.</strong></p>
 
-    <h2>Overview</h2>
+<h2>Overview</h2>
     <p>Theia is designed to inspect Java files (JARs, projects) and detect potential backdoors, unsafe code, or suspicious patterns. It can be run in two ways:</p>
     <ul>
         <li><strong>GUI Mode:</strong> Open an interactive graphical interface.</li>
         <li><strong>CLI Mode:</strong> Run from the command line on a specific file with optional exclusions.</li>
     </ul>
 
-    <h2>Usage</h2>
-    <p>Command-line syntax:</p>
-    <pre>java -jar theia.jar [file] [exclusions]</pre>
-    <p>Examples:</p>
-    <ul>
+<h2>Usage</h2>
+<p>Command-line syntax:</p>
+<pre>java -jar theia.jar [file] [exclusions]</pre>
+<p>Examples:</p>
+ <ul>
         <li><code>java -jar theia.jar</code> — opens the GUI.</li>
         <li><code>java -jar theia.jar myfile.jar</code> — runs Theia on <em>myfile.jar</em> with default exclusions.</li>
         <li><code>java -jar theia.jar myfile.jar "com/example/,org/test/"</code> — runs Theia with custom exclusions.</li>
     </ul>
 
-    <h2>Features</h2>
+<h2>Features</h2>
     <ul>
         <li>Graphical User Interface with file selection and logging.</li>
         <li>Customizable exclusions for libraries or safe packages.</li>
@@ -27,7 +27,7 @@
         <li>Lightweight, fast, and extendable.</li>
     </ul>
 
-    <h2>Default Exclusions</h2>
+<h2>Default Exclusions</h2>
     <ul>
         <li>org/reflections/</li>
         <li>javassist/</li>
@@ -36,12 +36,12 @@
         <li>net/jodah/typetools</li>
     </ul>
 
-    <h2>Credits & Shoutouts</h2>
+<h2>Credits & Shoutouts</h2>
     <p>Created by <strong>Tigermouthbear</strong> with contributions from <strong>GiantNuker, Crystalinqq, Dominika, and uxokpro1234</strong>.</p>
     <p>Shoutout to the official repository: <a href="https://github.com/Tigermouthbear/Theia">https://github.com/Tigermouthbear/Theia</a></p>
     <p>Current version: <strong>v0.2</strong></p>
 
-    <h2>Notes</h2>
+<h2>Notes</h2>
     <ul>
         <li>If you encounter a bug, please report it — it can be fixed quickly.</li>
         <li>Theia is constantly being improved to detect more backdoors and handle edge cases.</li>
