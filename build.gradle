@@ -9,8 +9,8 @@ java {
 }
 
 
-group 'me.uxokpro1234'
-version '1.0-SNAPSHOT'
+group 'me.uxokpro1234.theia'
+version '0.3'
 
 repositories {
     mavenCentral()
