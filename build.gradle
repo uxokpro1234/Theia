@@ -8,6 +8,13 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'me.uxokpro1234.theia.Main'
+        )
+    }
+}
 
 group 'me.uxokpro1234.theia'
 version '0.3'
