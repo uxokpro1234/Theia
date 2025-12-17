@@ -84,6 +84,17 @@ public class GUI extends JFrame {
 
         fileSelectButton = new JButton("Select File");
         fileSelectButton.addActionListener(e -> {
+            JFileChooser chooser = new JFileChooser();
+            if (chooser.showOpenDialog(fileSelectButton)
+                    == JFileChooser.APPROVE_OPTION) {
+
+                file = chooser.getSelectedFile();
+                fileIndicator.setText("File: " + file.getName());
+                runButton.setEnabled(true);
+            }
+        });
+        //This just doesnt work for jar.
+        /*fileSelectButton.addActionListener(e -> {
             NativeJFileChooser fileChooser = new NativeJFileChooser();
             if (fileChooser.showOpenDialog(fileSelectButton) == NativeJFileChooser.APPROVE_OPTION) {
                 file = fileChooser.getSelectedFile();
@@ -91,6 +102,7 @@ public class GUI extends JFrame {
                 runButton.setEnabled(true);
             }
         });
+        */
         fileBox.add(fileSelectButton);
 
         runButton = new JButton("Run Theia");
