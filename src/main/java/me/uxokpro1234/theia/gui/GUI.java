@@ -1,6 +1,5 @@
 package me.uxokpro1234.theia.gui;
 
-import li.flor.nativejfilechooser.NativeJFileChooser;
 import me.uxokpro1234.theia.Possible;
 import me.uxokpro1234.theia.Theia;
 import me.uxokpro1234.theia.checks.AbstractCheck;
@@ -154,27 +153,25 @@ public class GUI extends JFrame {
         runButton.setEnabled(false);
 
         cachedExec.execute(() -> {
-            // Update GUI safely in EDT
-            SwingUtilities.invokeLater(() -> {
-                oldOutputPanel.setText("Running...");
-                tableOutputPanel.removeAll();
-                JPanel panel = new JPanel(new BorderLayout());
-                panel.add(new JLabel("Running..."), BorderLayout.WEST);
-                tableOutputPanel.add(panel);
-                tabs.setSelectedIndex(0);
-            });
-
-            // Update exclusions from text area
-            exclusions.clear();
-            String[] lines = exclusionsBox.getText().split("\\R");
-            for (String line : lines) {
-                if (!line.isEmpty()) exclusions.add(line.trim());
+            try {
+                System.out.println("Run started");
+                Theia.getInstance().run(
+                        file,
+                        excludeLibraries.isSelected() ? new ArrayList<>(exclusions) : new ArrayList<>()
+                );
+                System.out.println("Run finished");
+            } catch (Throwable t) {
+                t.printStackTrace();
+                SwingUtilities.invokeLater(() ->
+                        JOptionPane.showMessageDialog(
+                                this,
+                                t.toString(),
+                                "Theia crashed",
+                                JOptionPane.ERROR_MESSAGE
+                        )
+                );
             }
 
-            // Run Theia
-            Theia.getInstance().run(file, excludeLibraries.isSelected() ? new ArrayList<>(exclusions) : new ArrayList<>());
-
-            // Update GUI after run
             SwingUtilities.invokeLater(() -> {
                 runButton.setEnabled(true);
                 runButton.setText("Run Theia");
@@ -251,7 +248,16 @@ public class GUI extends JFrame {
 
     public void log(String text) {
         if (text.startsWith("\r")) {
-            logPanel.setText(logPanel.getText().substring(0, logPanel.getText().lastIndexOf('\n')) + "\n" + text);
+            String current = logPanel.getText();
+            int lastNewline = current.lastIndexOf('\n');
+
+            if (lastNewline >= 0) {
+                logPanel.setText(
+                        current.substring(0, lastNewline) + "\n" + text.substring(1)
+                );
+            } else {
+                logPanel.setText(text.substring(1));
+            }
         } else {
             logPanel.append("\n" + text);
         }
