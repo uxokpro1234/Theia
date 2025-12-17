@@ -8,7 +8,8 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-jar {
+shadowJar {
+    archiveClassifier.set('')   //fix
     manifest {
         attributes(
                 'Main-Class': 'me.uxokpro1234.theia.Main'
@@ -16,8 +17,12 @@ jar {
     }
 }
 
+tasks.build {
+    dependsOn shadowJar
+}
+
 group 'me.uxokpro1234.theia'
-version '0.3'
+version ' v0.3'
 
 repositories {
     mavenCentral()
